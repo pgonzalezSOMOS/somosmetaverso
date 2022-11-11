@@ -1,0 +1,98 @@
+//proyectos
+.projects {
+	h1 {
+		color: #003334;
+		font-size: 20px; // tamaño de los titulos
+		font-weight: 700;
+	}
+
+	&__container {
+		position: relative;
+		margin: auto;
+		width: 100%;
+
+		&__list {
+			display: grid;
+			grid-template-columns: repeat(1, 1fr);
+			gap: 1rem;
+			margin-top: 1rem;
+			// columns: 3;
+			@media (min-width: 576px) {
+				grid-template-columns: repeat(3, 1fr);
+			}
+		}
+
+		&__item {
+			overflow: hidden;
+			position: relative;
+			margin-bottom: 1rem;
+			transition: all 0.25s ease-in-out;
+			display: grid;
+			height: fit-content;
+
+			figure {
+				padding: 0;
+				margin: 0;
+				height: fit-content;
+				img {
+					// width: 100%;
+					// height: 100%;
+					vertical-align: middle;
+				}
+
+				figcaption {
+					display: flex;
+					width: 100%;
+					height: 100%;
+
+					a {
+						display: flex;
+						flex-direction: column;
+						align-items: left;
+						justify-content: center;
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+						color: #fff;
+						text-align: left;
+						z-index: 2;
+						transition: all 0.5s;
+						&::before {
+							content: "";
+							position: absolute;
+							display: block;
+							width: 100%;
+							height: 100%;
+							top: 0;
+							left: 0;
+							background: $primary;
+							background: linear-gradient(0deg, $primary 0%, rgba(18, 238, 254, 0) 100%);
+							z-index: 0;
+						}
+
+						strong {
+							margin-left: 20px;
+							margin-bottom: 10px;
+						}
+
+						span {
+							margin-left: 20px;
+							margin-bottom: 10px;
+						}
+
+						&:hover {
+							opacity: 1;
+							&::before {
+								background: $primary;
+								background: linear-gradient(0deg, $primary 100%, rgba(18, 238, 254, 0) 100%);
+								z-index: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

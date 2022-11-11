@@ -1,0 +1,12 @@
+.gradient {
+	background: $primary;
+	background: linear-gradient(0deg, $primary 0%, rgba(18, 238, 254, 0) 100%);
+	z-index: 99;
+}
+
+.container {
+	max-width: $container;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	margin: auto;
+}
